@@ -4,19 +4,19 @@ RELEASE_FLAGS = -O2 -Wall -DNDEBUG
 DEBUG_FLAGS   = -g -O0 -Wall
 RELEASE_EXEC  = Kazino-Royal
 DEBUG_EXEC    = Kazino-Royal-dbg
-SRC         = Kazino-Royal.cpp
+S        = Kazino-Royal.cpp
 
 all: debug release
 
 debug: $(DEBUG_EXEC)
 
-Kazino-Royal-dbg: $(SRC)
-	g++ $(DEBUG_FLAGS) $(SRC) -o $(DEBUG_EXEC) 
+Kazino-Royal-dbg: $(S)
+	g++ $(DEBUG_FLAGS) $(S) -o $(DEBUG_EXEC) 
 
 release: $(RELEASE_EXEC)
 
-Kazino-Royal: $(SRC)
-	g++ $(RELEASE_FLAGS) $(SRC) -o $(RELEASE_EXEC)
+Kazino-Royal: $(S)
+	g++ $(RELEASE_FLAGS) $(S) -o $(RELEASE_EXEC)
 
 clean:
 	rm -f $(RELEASE_EXEC) $(DEBUG_EXEC)
